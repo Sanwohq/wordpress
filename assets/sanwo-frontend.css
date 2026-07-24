@@ -1,0 +1,60 @@
+/**
+ * Sanwo Payments — Frontend button styles.
+ *
+ * @package Sanwo_Payments
+ */
+
+.sanwo-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 24px;
+	background: #0066ff;
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.2s;
+	line-height: 1.4;
+	text-decoration: none;
+}
+
+.sanwo-button:hover {
+	background: #0052cc;
+	color: #fff;
+}
+
+.sanwo-button:focus {
+	background: #0052cc;
+	outline: 2px solid #0066ff;
+	outline-offset: 2px;
+}
+
+.sanwo-button:active {
+	background: #003d99;
+}
+
+.sanwo-button:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.sanwo-error {
+	color: #cc0000;
+	font-style: italic;
+}
+
+/* Block alignment support. */
+.wp-block-sanwo-checkout {
+	margin-bottom: 1em;
+}
+
+.wp-block-sanwo-checkout.aligncenter {
+	text-align: center;
+}
+
+.wp-block-sanwo-checkout.alignright {
+	text-align: right;
+}

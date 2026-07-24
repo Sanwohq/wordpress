@@ -1,0 +1,49 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "sanwo/checkout",
+	"version": "1.0.0",
+	"title": "Sanwo Checkout",
+	"category": "widgets",
+	"icon": "money-alt",
+	"description": "Add a Sanwo payment checkout button. Works with Paystack, Flutterwave, Razorpay, Monnify, and Interswitch.",
+	"keywords": [ "payment", "checkout", "sanwo", "paystack", "flutterwave" ],
+	"supports": {
+		"html": false,
+		"align": true
+	},
+	"textdomain": "sanwo-payments",
+	"attributes": {
+		"amount": {
+			"type": "string",
+			"default": ""
+		},
+		"currency": {
+			"type": "string",
+			"default": ""
+		},
+		"email": {
+			"type": "string",
+			"default": ""
+		},
+		"description": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Pay Now"
+		},
+		"provider": {
+			"type": "string",
+			"default": ""
+		},
+		"publicKey": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:../../assets/sanwo-frontend.css",
+	"style": "file:../../assets/sanwo-frontend.css"
+}

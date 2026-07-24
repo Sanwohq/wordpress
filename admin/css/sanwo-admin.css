@@ -1,0 +1,51 @@
+/**
+ * Sanwo Payments — Admin settings page styles.
+ *
+ * @package Sanwo_Payments
+ */
+
+.sanwo-settings-wrap {
+	max-width: 800px;
+}
+
+.sanwo-settings-wrap h1 {
+	margin-bottom: 20px;
+	font-size: 23px;
+	font-weight: 400;
+}
+
+.sanwo-settings-wrap .form-table th {
+	width: 200px;
+	padding: 15px 10px 15px 0;
+	vertical-align: top;
+}
+
+.sanwo-settings-wrap .form-table td {
+	padding: 10px 0;
+}
+
+.sanwo-settings-wrap .form-table input[type="text"],
+.sanwo-settings-wrap .form-table select {
+	min-width: 320px;
+}
+
+.sanwo-settings-wrap .form-table .small-text {
+	min-width: 80px;
+	width: 80px;
+}
+
+.sanwo-settings-wrap .form-table .description {
+	margin-top: 6px;
+	color: #646970;
+	font-style: italic;
+}
+
+.sanwo-settings-wrap .form-table label {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.sanwo-settings-wrap .submit {
+	padding-top: 10px;
+}
