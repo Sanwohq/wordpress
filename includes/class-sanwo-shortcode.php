@@ -56,7 +56,7 @@ class Sanwo_Shortcode {
 				'provider'     => $settings['provider'],
 				'key'          => $settings['public_key'],
 				'description'  => '',
-				'button_text'  => __( 'Pay Now', 'sanwo-payments' ),
+				'button_text'  => __( 'Pay Now', 'sanwo' ),
 				'button_class' => 'sanwo-button',
 				'callback'     => '',
 				'first_name'   => '',
@@ -71,7 +71,7 @@ class Sanwo_Shortcode {
 		// Amount is required.
 		if ( empty( $atts['amount'] ) ) {
 			if ( current_user_can( 'manage_options' ) ) {
-				return '<p class="sanwo-error">' . esc_html__( 'Sanwo: The "amount" attribute is required.', 'sanwo-payments' ) . '</p>';
+				return '<p class="sanwo-error">' . esc_html__( 'Sanwo: The "amount" attribute is required.', 'sanwo' ) . '</p>';
 			}
 			return '';
 		}

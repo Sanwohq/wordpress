@@ -1,18 +1,18 @@
 <?php
 /**
- * Plugin Name: Sanwo Payments
- * Plugin URI:  https://sanwohq.com
+ * Plugin Name: Sanwo
+ * Plugin URI:  https://github.com/Sanwohq/wordpress
  * Description: Accept payments with Sanwo — one plugin, multiple providers. Works with Paystack, Flutterwave, Razorpay, Monnify, and Interswitch.
  * Version:     1.0.0
  * Author:      SanwoHQ
  * Author URI:  https://sanwohq.com
  * License:     Apache-2.0
  * License URI: https://www.apache.org/licenses/LICENSE-2.0
- * Text Domain: sanwo-payments
+ * Text Domain: sanwo
  * Domain Path: /languages
  * Requires at least: 5.8
  * Requires PHP: 7.4
- * Tested up to: 6.7
+ * Tested up to: 7.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -72,7 +72,7 @@ function sanwo_enqueue_embed_script() {
 
 	wp_enqueue_script(
 		'sanwo-embed',
-		'https://cdn.jsdelivr.net/npm/@sanwohq/embed/dist/sanwo.global.js',
+		SANWO_PLUGIN_URL . 'assets/sanwo-embed.js',
 		array(),
 		SANWO_VERSION,
 		true
@@ -121,18 +121,11 @@ register_deactivation_hook( __FILE__, 'sanwo_deactivate' );
 function sanwo_plugin_action_links( $links ) {
 	$settings_link = sprintf(
 		'<a href="%s">%s</a>',
-		esc_url( admin_url( 'options-general.php?page=sanwo-payments' ) ),
-		esc_html__( 'Settings', 'sanwo-payments' )
+		esc_url( admin_url( 'options-general.php?page=sanwo' ) ),
+		esc_html__( 'Settings', 'sanwo' )
 	);
 	array_unshift( $links, $settings_link );
 	return $links;
 }
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'sanwo_plugin_action_links' );
 
-/**
- * Load plugin text domain for translations.
- */
-function sanwo_load_textdomain() {
-	load_plugin_textdomain( 'sanwo-payments', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-}
-add_action( 'init', 'sanwo_load_textdomain' );

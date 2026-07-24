@@ -1,8 +1,8 @@
-=== Sanwo Payments ===
+=== Sanwo ===
 Contributors: sanwohq
-Tags: payments, paystack, flutterwave, razorpay, monnify, interswitch, checkout, woocommerce
+Tags: payments, paystack, flutterwave, woocommerce, checkout
 Requires at least: 5.8
-Tested up to: 6.7
+Tested up to: 7.0
 Stable tag: 1.0.0
 Requires PHP: 7.4
 License: Apache-2.0
@@ -32,7 +32,7 @@ Sanwo Payments is a universal payment plugin that wraps multiple payment provide
 
 == Installation ==
 
-1. Upload the `sanwo-payments` folder to `/wp-content/plugins/`.
+1. Upload the `sanwo` folder to `/wp-content/plugins/`.
 2. Activate the plugin through the **Plugins** menu in WordPress.
 3. Go to **Settings > Sanwo Payments** and enter your provider and public key.
 4. Use the `[sanwo_checkout]` shortcode or the Gutenberg block to add payment buttons.

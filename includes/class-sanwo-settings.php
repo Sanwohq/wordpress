@@ -65,10 +65,10 @@ class Sanwo_Settings {
 	 */
 	public function add_settings_page() {
 		add_options_page(
-			__( 'Sanwo Payments', 'sanwo-payments' ),
-			__( 'Sanwo Payments', 'sanwo-payments' ),
+			__( 'Sanwo Payments', 'sanwo' ),
+			__( 'Sanwo Payments', 'sanwo' ),
 			'manage_options',
-			'sanwo-payments',
+			'sanwo',
 			array( $this, 'render_settings_page' )
 		);
 	}
@@ -95,40 +95,40 @@ class Sanwo_Settings {
 		// General section.
 		add_settings_section(
 			'sanwo_general_section',
-			__( 'General Settings', 'sanwo-payments' ),
+			__( 'General Settings', 'sanwo' ),
 			array( $this, 'render_section_description' ),
-			'sanwo-payments'
+			'sanwo'
 		);
 
 		add_settings_field(
 			'sanwo_provider',
-			__( 'Payment Provider', 'sanwo-payments' ),
+			__( 'Payment Provider', 'sanwo' ),
 			array( $this, 'render_provider_field' ),
-			'sanwo-payments',
+			'sanwo',
 			'sanwo_general_section'
 		);
 
 		add_settings_field(
 			'sanwo_public_key',
-			__( 'Public Key', 'sanwo-payments' ),
+			__( 'Public Key', 'sanwo' ),
 			array( $this, 'render_public_key_field' ),
-			'sanwo-payments',
+			'sanwo',
 			'sanwo_general_section'
 		);
 
 		add_settings_field(
 			'sanwo_default_currency',
-			__( 'Default Currency', 'sanwo-payments' ),
+			__( 'Default Currency', 'sanwo' ),
 			array( $this, 'render_currency_field' ),
-			'sanwo-payments',
+			'sanwo',
 			'sanwo_general_section'
 		);
 
 		add_settings_field(
 			'sanwo_debug_mode',
-			__( 'Debug Mode', 'sanwo-payments' ),
+			__( 'Debug Mode', 'sanwo' ),
 			array( $this, 'render_debug_field' ),
-			'sanwo-payments',
+			'sanwo',
 			'sanwo_general_section'
 		);
 	}
@@ -157,7 +157,7 @@ class Sanwo_Settings {
 	 * Render section description.
 	 */
 	public function render_section_description() {
-		echo '<p>' . esc_html__( 'Configure your Sanwo payment settings below. You will need a public key from your chosen provider.', 'sanwo-payments' ) . '</p>';
+		echo '<p>' . esc_html__( 'Configure your Sanwo payment settings below. You will need a public key from your chosen provider.', 'sanwo' ) . '</p>';
 	}
 
 	/**
@@ -177,7 +177,7 @@ class Sanwo_Settings {
 			);
 		}
 		echo '</select>';
-		echo '<p class="description">' . esc_html__( 'Select the payment provider you want to use.', 'sanwo-payments' ) . '</p>';
+		echo '<p class="description">' . esc_html__( 'Select the payment provider you want to use.', 'sanwo' ) . '</p>';
 	}
 
 	/**
@@ -191,9 +191,9 @@ class Sanwo_Settings {
 			'<input type="text" id="sanwo_public_key" name="%s[public_key]" value="%s" class="regular-text" placeholder="%s" />',
 			esc_attr( self::OPTION_KEY ),
 			esc_attr( $value ),
-			esc_attr__( 'pk_test_xxxxxxxxxxxxxxxx', 'sanwo-payments' )
+			esc_attr__( 'pk_test_xxxxxxxxxxxxxxxx', 'sanwo' )
 		);
-		echo '<p class="description">' . esc_html__( 'Enter the public/publishable key from your payment provider.', 'sanwo-payments' ) . '</p>';
+		echo '<p class="description">' . esc_html__( 'Enter the public/publishable key from your payment provider.', 'sanwo' ) . '</p>';
 	}
 
 	/**
@@ -208,7 +208,7 @@ class Sanwo_Settings {
 			esc_attr( self::OPTION_KEY ),
 			esc_attr( $value )
 		);
-		echo '<p class="description">' . esc_html__( 'ISO 4217 currency code (e.g. NGN, USD, GBP).', 'sanwo-payments' ) . '</p>';
+		echo '<p class="description">' . esc_html__( 'ISO 4217 currency code (e.g. NGN, USD, GBP).', 'sanwo' ) . '</p>';
 	}
 
 	/**
@@ -222,7 +222,7 @@ class Sanwo_Settings {
 			'<label><input type="checkbox" id="sanwo_debug_mode" name="%s[debug_mode]" value="1" %s /> %s</label>',
 			esc_attr( self::OPTION_KEY ),
 			checked( $checked, '1', false ),
-			esc_html__( 'Enable debug logging in the browser console.', 'sanwo-payments' )
+			esc_html__( 'Enable debug logging in the browser console.', 'sanwo' )
 		);
 	}
 
@@ -240,8 +240,8 @@ class Sanwo_Settings {
 			<form action="options.php" method="post">
 				<?php
 				settings_fields( 'sanwo_settings_group' );
-				do_settings_sections( 'sanwo-payments' );
-				submit_button( __( 'Save Settings', 'sanwo-payments' ) );
+				do_settings_sections( 'sanwo' );
+				submit_button( __( 'Save Settings', 'sanwo' ) );
 				?>
 			</form>
 		</div>
@@ -254,7 +254,7 @@ class Sanwo_Settings {
 	 * @param string $hook_suffix Current admin page hook.
 	 */
 	public function enqueue_admin_assets( $hook_suffix ) {
-		if ( 'settings_page_sanwo-payments' !== $hook_suffix ) {
+		if ( 'settings_page_sanwo' !== $hook_suffix ) {
 			return;
 		}
 

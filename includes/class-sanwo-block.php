@@ -88,13 +88,13 @@ class Sanwo_Block {
 		$currency    = ! empty( $attributes['currency'] ) ? $attributes['currency'] : $settings['default_currency'];
 		$email       = ! empty( $attributes['email'] ) ? $attributes['email'] : '';
 		$description = isset( $attributes['description'] ) ? $attributes['description'] : '';
-		$button_text = ! empty( $attributes['buttonText'] ) ? $attributes['buttonText'] : __( 'Pay Now', 'sanwo-payments' );
+		$button_text = ! empty( $attributes['buttonText'] ) ? $attributes['buttonText'] : __( 'Pay Now', 'sanwo' );
 		$provider    = ! empty( $attributes['provider'] ) ? $attributes['provider'] : $settings['provider'];
 		$public_key  = ! empty( $attributes['publicKey'] ) ? $attributes['publicKey'] : $settings['public_key'];
 
 		if ( empty( $amount ) ) {
 			if ( current_user_can( 'manage_options' ) ) {
-				return '<p class="sanwo-error">' . esc_html__( 'Sanwo: Please set an amount for the checkout block.', 'sanwo-payments' ) . '</p>';
+				return '<p class="sanwo-error">' . esc_html__( 'Sanwo: Please set an amount for the checkout block.', 'sanwo' ) . '</p>';
 			}
 			return '';
 		}

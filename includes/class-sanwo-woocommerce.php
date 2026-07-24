@@ -19,16 +19,16 @@ class Sanwo_WooCommerce_Gateway extends WC_Payment_Gateway {
 		$this->id                 = 'sanwo';
 		$this->icon               = '';
 		$this->has_fields         = false;
-		$this->method_title       = __( 'Sanwo Payments', 'sanwo-payments' );
-		$this->method_description = __( 'Accept payments via Paystack, Flutterwave, Razorpay, Monnify, or Interswitch using the Sanwo SDK.', 'sanwo-payments' );
-		$this->order_button_text  = __( 'Proceed to Payment', 'sanwo-payments' );
+		$this->method_title       = __( 'Sanwo Payments', 'sanwo' );
+		$this->method_description = __( 'Accept payments via Paystack, Flutterwave, Razorpay, Monnify, or Interswitch using the Sanwo SDK.', 'sanwo' );
+		$this->order_button_text  = __( 'Proceed to Payment', 'sanwo' );
 
 		// Load settings form fields.
 		$this->init_form_fields();
 		$this->init_settings();
 
-		$this->title       = $this->get_option( 'title', __( 'Sanwo Payments', 'sanwo-payments' ) );
-		$this->description = $this->get_option( 'description', __( 'Pay securely using your preferred payment provider.', 'sanwo-payments' ) );
+		$this->title       = $this->get_option( 'title', __( 'Sanwo Payments', 'sanwo' ) );
+		$this->description = $this->get_option( 'description', __( 'Pay securely using your preferred payment provider.', 'sanwo' ) );
 		$this->enabled     = $this->get_option( 'enabled', 'no' );
 		$this->provider    = $this->get_option( 'provider', 'paystack' );
 		$this->public_key  = $this->get_option( 'public_key', '' );
@@ -50,51 +50,51 @@ class Sanwo_WooCommerce_Gateway extends WC_Payment_Gateway {
 	public function init_form_fields() {
 		$this->form_fields = array(
 			'enabled'     => array(
-				'title'   => __( 'Enable/Disable', 'sanwo-payments' ),
+				'title'   => __( 'Enable/Disable', 'sanwo' ),
 				'type'    => 'checkbox',
-				'label'   => __( 'Enable Sanwo Payments', 'sanwo-payments' ),
+				'label'   => __( 'Enable Sanwo Payments', 'sanwo' ),
 				'default' => 'no',
 			),
 			'title'       => array(
-				'title'       => __( 'Title', 'sanwo-payments' ),
+				'title'       => __( 'Title', 'sanwo' ),
 				'type'        => 'text',
-				'description' => __( 'This controls the title displayed during checkout.', 'sanwo-payments' ),
-				'default'     => __( 'Sanwo Payments', 'sanwo-payments' ),
+				'description' => __( 'This controls the title displayed during checkout.', 'sanwo' ),
+				'default'     => __( 'Sanwo Payments', 'sanwo' ),
 				'desc_tip'    => true,
 			),
 			'description' => array(
-				'title'       => __( 'Description', 'sanwo-payments' ),
+				'title'       => __( 'Description', 'sanwo' ),
 				'type'        => 'textarea',
-				'description' => __( 'This controls the description displayed during checkout.', 'sanwo-payments' ),
-				'default'     => __( 'Pay securely using your preferred payment provider.', 'sanwo-payments' ),
+				'description' => __( 'This controls the description displayed during checkout.', 'sanwo' ),
+				'default'     => __( 'Pay securely using your preferred payment provider.', 'sanwo' ),
 				'desc_tip'    => true,
 			),
 			'provider'    => array(
-				'title'       => __( 'Payment Provider', 'sanwo-payments' ),
+				'title'       => __( 'Payment Provider', 'sanwo' ),
 				'type'        => 'select',
-				'description' => __( 'Select the payment provider to process transactions.', 'sanwo-payments' ),
+				'description' => __( 'Select the payment provider to process transactions.', 'sanwo' ),
 				'default'     => 'paystack',
 				'options'     => array(
-					'paystack'    => __( 'Paystack', 'sanwo-payments' ),
-					'flutterwave' => __( 'Flutterwave', 'sanwo-payments' ),
-					'razorpay'    => __( 'Razorpay', 'sanwo-payments' ),
-					'monnify'     => __( 'Monnify', 'sanwo-payments' ),
-					'interswitch' => __( 'Interswitch', 'sanwo-payments' ),
+					'paystack'    => __( 'Paystack', 'sanwo' ),
+					'flutterwave' => __( 'Flutterwave', 'sanwo' ),
+					'razorpay'    => __( 'Razorpay', 'sanwo' ),
+					'monnify'     => __( 'Monnify', 'sanwo' ),
+					'interswitch' => __( 'Interswitch', 'sanwo' ),
 				),
 				'desc_tip'    => true,
 			),
 			'public_key'  => array(
-				'title'       => __( 'Public Key', 'sanwo-payments' ),
+				'title'       => __( 'Public Key', 'sanwo' ),
 				'type'        => 'text',
-				'description' => __( 'Enter the public/publishable key from your payment provider.', 'sanwo-payments' ),
+				'description' => __( 'Enter the public/publishable key from your payment provider.', 'sanwo' ),
 				'default'     => '',
 				'desc_tip'    => true,
 			),
 			'test_mode'   => array(
-				'title'       => __( 'Test Mode', 'sanwo-payments' ),
+				'title'       => __( 'Test Mode', 'sanwo' ),
 				'type'        => 'checkbox',
-				'label'       => __( 'Enable test mode', 'sanwo-payments' ),
-				'description' => __( 'Use your test/sandbox API keys for transactions.', 'sanwo-payments' ),
+				'label'       => __( 'Enable test mode', 'sanwo' ),
+				'description' => __( 'Use your test/sandbox API keys for transactions.', 'sanwo' ),
 				'default'     => 'no',
 				'desc_tip'    => true,
 			),
@@ -109,7 +109,7 @@ class Sanwo_WooCommerce_Gateway extends WC_Payment_Gateway {
 		if ( $this->description ) {
 			echo '<p>' . wp_kses_post( $this->description ) . '</p>';
 		}
-		echo '<p>' . esc_html__( 'You will be redirected to complete your payment after placing the order.', 'sanwo-payments' ) . '</p>';
+		echo '<p>' . esc_html__( 'You will be redirected to complete your payment after placing the order.', 'sanwo' ) . '</p>';
 	}
 
 	/**
@@ -122,12 +122,12 @@ class Sanwo_WooCommerce_Gateway extends WC_Payment_Gateway {
 		$order = wc_get_order( $order_id );
 
 		if ( ! $order ) {
-			wc_add_notice( __( 'Order not found. Please try again.', 'sanwo-payments' ), 'error' );
+			wc_add_notice( __( 'Order not found. Please try again.', 'sanwo' ), 'error' );
 			return array( 'result' => 'failure' );
 		}
 
 		// Mark order as pending.
-		$order->update_status( 'pending', __( 'Awaiting Sanwo payment.', 'sanwo-payments' ) );
+		$order->update_status( 'pending', __( 'Awaiting Sanwo payment.', 'sanwo' ) );
 
 		// Generate a unique reference.
 		$reference = 'sanwo_' . $order_id . '_' . wp_generate_password( 8, false );
@@ -149,7 +149,7 @@ class Sanwo_WooCommerce_Gateway extends WC_Payment_Gateway {
 		$order = wc_get_order( $order_id );
 
 		if ( ! $order ) {
-			echo '<p>' . esc_html__( 'Order not found.', 'sanwo-payments' ) . '</p>';
+			echo '<p>' . esc_html__( 'Order not found.', 'sanwo' ) . '</p>';
 			return;
 		}
 
@@ -168,7 +168,7 @@ class Sanwo_WooCommerce_Gateway extends WC_Payment_Gateway {
 		$cancel_url  = esc_url( wc_get_checkout_url() );
 
 		echo '<div id="sanwo-wc-checkout" style="text-align:center;padding:40px 0;">';
-		echo '<p>' . esc_html__( 'Initializing payment... Please wait.', 'sanwo-payments' ) . '</p>';
+		echo '<p>' . esc_html__( 'Initializing payment... Please wait.', 'sanwo' ) . '</p>';
 		echo '</div>';
 
 		?>
@@ -198,7 +198,7 @@ class Sanwo_WooCommerce_Gateway extends WC_Payment_Gateway {
 					description: <?php echo wp_json_encode(
 						sprintf(
 							/* translators: %s: order number */
-							__( 'Payment for order #%s', 'sanwo-payments' ),
+							__( 'Payment for order #%s', 'sanwo' ),
 							$order->get_order_number()
 						)
 					); ?>
@@ -211,9 +211,9 @@ class Sanwo_WooCommerce_Gateway extends WC_Payment_Gateway {
 						var container = document.getElementById( 'sanwo-wc-checkout' );
 						if ( container ) {
 							container.innerHTML = '<p style="color:#c00;">' +
-								<?php echo wp_json_encode( __( 'Payment was not completed. Please try again.', 'sanwo-payments' ) ); ?> +
+								<?php echo wp_json_encode( __( 'Payment was not completed. Please try again.', 'sanwo' ) ); ?> +
 								'</p><a href="' + <?php echo wp_json_encode( $cancel_url ); ?> + '" class="button">' +
-								<?php echo wp_json_encode( __( 'Return to Checkout', 'sanwo-payments' ) ); ?> +
+								<?php echo wp_json_encode( __( 'Return to Checkout', 'sanwo' ) ); ?> +
 								'</a>';
 						}
 					}
@@ -221,9 +221,9 @@ class Sanwo_WooCommerce_Gateway extends WC_Payment_Gateway {
 					var container = document.getElementById( 'sanwo-wc-checkout' );
 					if ( container ) {
 						container.innerHTML = '<p style="color:#c00;">' +
-							<?php echo wp_json_encode( __( 'An error occurred during payment. Please try again.', 'sanwo-payments' ) ); ?> +
+							<?php echo wp_json_encode( __( 'An error occurred during payment. Please try again.', 'sanwo' ) ); ?> +
 							'</p><a href="' + <?php echo wp_json_encode( $cancel_url ); ?> + '" class="button">' +
-							<?php echo wp_json_encode( __( 'Return to Checkout', 'sanwo-payments' ) ); ?> +
+							<?php echo wp_json_encode( __( 'Return to Checkout', 'sanwo' ) ); ?> +
 							'</a>';
 					}
 				});

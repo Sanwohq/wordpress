@@ -42,7 +42,7 @@
 		var currency    = attributes.currency || defaults.defaultCurrency;
 		var email       = attributes.email || '';
 		var description = attributes.description || '';
-		var buttonText  = attributes.buttonText || __( 'Pay Now', 'sanwo-payments' );
+		var buttonText  = attributes.buttonText || __( 'Pay Now', 'sanwo' );
 		var provider    = attributes.provider || defaults.defaultProvider;
 		var publicKey   = attributes.publicKey || '';
 
@@ -52,59 +52,59 @@
 			null,
 			el(
 				PanelBody,
-				{ title: __( 'Payment Settings', 'sanwo-payments' ), initialOpen: true },
+				{ title: __( 'Payment Settings', 'sanwo' ), initialOpen: true },
 				el( TextControl, {
-					label: __( 'Amount (minor units)', 'sanwo-payments' ),
-					help: __( 'Amount in minor units, e.g. 500000 for 5,000 NGN.', 'sanwo-payments' ),
+					label: __( 'Amount (minor units)', 'sanwo' ),
+					help: __( 'Amount in minor units, e.g. 500000 for 5,000 NGN.', 'sanwo' ),
 					value: amount,
 					onChange: function( val ) { setAttributes( { amount: val } ); },
 				} ),
 				el( TextControl, {
-					label: __( 'Currency', 'sanwo-payments' ),
-					help: __( 'ISO currency code. Leave blank to use the default from settings.', 'sanwo-payments' ),
+					label: __( 'Currency', 'sanwo' ),
+					help: __( 'ISO currency code. Leave blank to use the default from settings.', 'sanwo' ),
 					value: currency,
 					onChange: function( val ) { setAttributes( { currency: val } ); },
 				} ),
 				el( TextControl, {
-					label: __( 'Email', 'sanwo-payments' ),
-					help: __( 'Customer email. Leave blank to use the logged-in user email.', 'sanwo-payments' ),
+					label: __( 'Email', 'sanwo' ),
+					help: __( 'Customer email. Leave blank to use the logged-in user email.', 'sanwo' ),
 					value: email,
 					onChange: function( val ) { setAttributes( { email: val } ); },
 				} ),
 				el( TextControl, {
-					label: __( 'Description', 'sanwo-payments' ),
+					label: __( 'Description', 'sanwo' ),
 					value: description,
 					onChange: function( val ) { setAttributes( { description: val } ); },
 				} )
 			),
 			el(
 				PanelBody,
-				{ title: __( 'Provider Settings', 'sanwo-payments' ), initialOpen: false },
+				{ title: __( 'Provider Settings', 'sanwo' ), initialOpen: false },
 				el( SelectControl, {
-					label: __( 'Provider', 'sanwo-payments' ),
-					help: __( 'Leave at default to use the provider from plugin settings.', 'sanwo-payments' ),
+					label: __( 'Provider', 'sanwo' ),
+					help: __( 'Leave at default to use the provider from plugin settings.', 'sanwo' ),
 					value: provider,
 					options: [
-						{ label: __( 'Paystack', 'sanwo-payments' ),    value: 'paystack' },
-						{ label: __( 'Flutterwave', 'sanwo-payments' ), value: 'flutterwave' },
-						{ label: __( 'Razorpay', 'sanwo-payments' ),    value: 'razorpay' },
-						{ label: __( 'Monnify', 'sanwo-payments' ),     value: 'monnify' },
-						{ label: __( 'Interswitch', 'sanwo-payments' ), value: 'interswitch' },
+						{ label: __( 'Paystack', 'sanwo' ),    value: 'paystack' },
+						{ label: __( 'Flutterwave', 'sanwo' ), value: 'flutterwave' },
+						{ label: __( 'Razorpay', 'sanwo' ),    value: 'razorpay' },
+						{ label: __( 'Monnify', 'sanwo' ),     value: 'monnify' },
+						{ label: __( 'Interswitch', 'sanwo' ), value: 'interswitch' },
 					],
 					onChange: function( val ) { setAttributes( { provider: val } ); },
 				} ),
 				el( TextControl, {
-					label: __( 'Public Key', 'sanwo-payments' ),
-					help: __( 'Override the public key from plugin settings.', 'sanwo-payments' ),
+					label: __( 'Public Key', 'sanwo' ),
+					help: __( 'Override the public key from plugin settings.', 'sanwo' ),
 					value: publicKey,
 					onChange: function( val ) { setAttributes( { publicKey: val } ); },
 				} )
 			),
 			el(
 				PanelBody,
-				{ title: __( 'Button', 'sanwo-payments' ), initialOpen: false },
+				{ title: __( 'Button', 'sanwo' ), initialOpen: false },
 				el( TextControl, {
-					label: __( 'Button Text', 'sanwo-payments' ),
+					label: __( 'Button Text', 'sanwo' ),
 					value: buttonText,
 					onChange: function( val ) { setAttributes( { buttonText: val } ); },
 				} )
@@ -128,7 +128,7 @@
 				? el(
 					'p',
 					{ style: { color: '#999', fontSize: '13px', marginTop: '8px' } },
-					__( 'Set the amount in the block settings panel.', 'sanwo-payments' )
+					__( 'Set the amount in the block settings panel.', 'sanwo' )
 				)
 				: el(
 					'p',

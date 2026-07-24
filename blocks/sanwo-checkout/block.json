@@ -12,7 +12,7 @@
 		"html": false,
 		"align": true
 	},
-	"textdomain": "sanwo-payments",
+	"textdomain": "sanwo",
 	"attributes": {
 		"amount": {
 			"type": "string",

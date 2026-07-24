@@ -15,14 +15,14 @@
 	var __                = wp.i18n.__;
 
 	registerBlockType( 'sanwo/checkout', {
-		title: __( 'Sanwo Checkout', 'sanwo-payments' ),
-		description: __( 'Add a Sanwo payment checkout button.', 'sanwo-payments' ),
+		title: __( 'Sanwo Checkout', 'sanwo' ),
+		description: __( 'Add a Sanwo payment checkout button.', 'sanwo' ),
 		category: 'widgets',
 		icon: 'money-alt',
 		keywords: [
-			__( 'payment', 'sanwo-payments' ),
-			__( 'checkout', 'sanwo-payments' ),
-			__( 'sanwo', 'sanwo-payments' ),
+			__( 'payment', 'sanwo' ),
+			__( 'checkout', 'sanwo' ),
+			__( 'sanwo', 'sanwo' ),
 		],
 		supports: {
 			html: false,
