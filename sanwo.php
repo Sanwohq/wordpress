@@ -3,7 +3,7 @@
  * Plugin Name: Sanwo
  * Plugin URI:  https://github.com/Sanwohq/wordpress
  * Description: Accept payments with Sanwo — one plugin, multiple providers. Works with Paystack, Flutterwave, Razorpay, Monnify, and Interswitch.
- * Version:     1.0.0
+ * Version:     1.1.0
  * Author:      SanwoHQ
  * Author URI:  https://sanwohq.com
  * License:     Apache-2.0
@@ -18,7 +18,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Plugin constants.
-define( 'SANWO_VERSION', '1.0.0' );
+define( 'SANWO_VERSION', '1.1.0' );
 define( 'SANWO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SANWO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 

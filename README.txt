@@ -3,7 +3,7 @@ Contributors: sanwohq
 Tags: payments, paystack, flutterwave, woocommerce, checkout
 Requires at least: 5.8
 Tested up to: 7.0
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 Requires PHP: 7.4
 License: Apache-2.0
 License URI: https://www.apache.org/licenses/LICENSE-2.0
@@ -69,6 +69,12 @@ No. The Gutenberg block uses `wp.element.createElement` directly, so no JSX comp
 
 == Changelog ==
 
+= 1.1.0 =
+* Custom amounts — let customers enter their own payment amount (donations, tips, pay-what-you-want).
+* Custom provider templates — use any payment gateway by providing your own template.
+* Register reusable custom providers by name.
+* Updated Sanwo embed SDK with new features.
+
 = 1.0.0 =
 * Initial release.
 * Settings page for provider, public key, currency, and debug mode.
@@ -77,6 +83,9 @@ No. The Gutenberg block uses `wp.element.createElement` directly, so no JSX comp
 * WooCommerce payment gateway integration.
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+Custom amounts and custom provider templates — see changelog for details.
 
 = 1.0.0 =
 Initial release.
